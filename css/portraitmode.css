@@ -1,0 +1,15 @@
+@media (orientation: portrait) {
+    @media (max-width: 800px) {
+        article div {
+            width: 40vw;
+        }
+    }
+    @media (max-width: 480px) {
+        article div {
+            width: 80vw;
+        }
+        nav li {
+            width: 80vw;
+        }
+    }
+}
