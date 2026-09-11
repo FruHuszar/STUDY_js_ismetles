@@ -1,33 +1,34 @@
 export default class Virag {
+    #obj = {};
+    #szuloElem = "";
 
-    #obj = {}
-    #szuloelem=""
-
-    constructor(obj, szuloelem){
+    constructor(obj, szuloElem) {
         this.#obj = obj;
-        this.#szuloelem = szuloelem;
+        this.#szuloElem = szuloElem;
         this.megjelenit();
-        this.gombElem=document.querySelector(".virag:last-child button");
         this.esemenykezelo();
     }
 
-    megjelenit(){
-        const SZOVEG=`
-        <div class="virag">
-            <h2>${this.#obj.nev}</h2>
-            <p><span>${this.#obj.faj}</span></p>
-            <p><span>${this.#obj.viragzas}</span></p>
-            <button class="open">Megnyit</button>
-        </div>
+    megjelenit() {
+        const SZOVEG = `
+            <div class="kartyat-tartalom">
+                <h3>${this.#obj.nev}</h3>
+                <p>${this.#obj.faj}</p>
+                <!-- A megnyitás gomb gombosztálya/azonosítója -->
+                <button class="megnyit-btn">Megnyitás</button>
+            </div>
         `;
-
-        this.#szuloelem.insertAdjacentHTML("beforeend", SZOVEG);
+        this.#szuloElem.insertAdjacentHTML("beforeend", SZOVEG);
     }
 
-    esemenykezelo(){
-        this.gombElem.addEventListener("click",()=>{
-            const esemeny = new CustomEvent("megnyit",{detail:this.#obj.id});
-            window.dispatchEvent(esemeny);
-        });
+    esemenykezelo() {
+        const megnyitGomb = this.#szuloElem.querySelector(".kartyat-tartalom:last-child .megnyit-btn");
+
+        if (megnyitGomb) {
+            megnyitGomb.addEventListener("click", () => {
+                const e = new CustomEvent("megnyit", { detail: this.#obj.id });
+                window.dispatchEvent(e);
+            });
+        }
     }
 }
