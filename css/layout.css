@@ -10,15 +10,22 @@ main {
     max-width: 1200px;
     min-height: 90vh;
     margin: 5vh auto;
-    text-align: center;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     gap: 28px;
-    padding: 0 24px;
 }
 
-.virag h2 {
-    margin-bottom: 0;
+header h1 {
+    margin: 0;
+}
+
+header h1::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 4px;
+    margin: 14px auto 0;
 }
 
 nav ul {
@@ -31,30 +38,27 @@ nav ul {
 }
 
 nav ul li {
-    text-align: center;
     padding: 10px 22px;
     margin: 0;
+}
+
+nav ul a {
+    display: block;
 }
 
 button {
-    text-align: center;
     padding: 10px 22px;
     margin: 0;
-}
-
-.virag p:last-child {
-    margin-bottom: 0;
-}
-
-.open {
-    font-size: 12px;
-    padding: 5px 10px;
 }
 
 section {
     display: flex;
-    gap: 10px;
     justify-content: center;
+    gap: 10px;
+}
+
+.kosarsection {
+    flex-direction: column;
 }
 
 article {
@@ -70,33 +74,55 @@ article div {
     padding: 0 0 22px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    overflow: hidden;
 }
 
-article button {
-    width: 30%;
-    margin-left: auto;
-    margin-right: 20px;
+article div::before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin-bottom: 18px;
+}
+
+article div h2,
+article div h3 {
+    margin: 0 20px 10px;
+}
+
+article div p {
+    margin: 0 20px 8px;
+}
+
+article div p:last-of-type {
+    margin-bottom: 0;
+}
+
+article div p:last-of-type span {
+    display: inline-block;
+    padding: 5px 12px;
+}
+
+article div button {
+    width: auto;
+    align-self: flex-end;
+    margin: 12px 20px 0;
+    padding: 8px 18px;
 }
 
 .modal {
-    border-radius: var(--radius);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    
     width: 50vw;
     height: 90vh;
-    overflow-x: hidden;
     padding: 30px;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.5);
 }
 
-.kosarsection {
-    display: flex;
-    flex-direction: column;
+footer {
+    padding-top: 8px;
 }
