@@ -3,6 +3,10 @@
         article div {
             width: 40vw;
         }
+        
+        .modal {
+            width: 70vw;
+        }
     }
     @media (max-width: 480px) {
         article div {
@@ -10,6 +14,10 @@
         }
         nav li {
             width: 80vw;
+        }
+        
+        .modal {
+            width: 90vw;
         }
     }
 }

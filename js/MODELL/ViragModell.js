@@ -11,12 +11,22 @@ export default class ViragModell {
     }
 
     rendezLista(){
-        const RENDEZETTLISTA = [];
-        return RENDEZETTLISTA;
+        return this.#lista.sort((a,b)=>{
+            return a.nev > b.nev ? 1 : -1;
+        });
     }
 
     szuresLista(){
-        const SZURTLISTA = [];
+        const SZURTLISTA = this.#lista.filter((a)=>{
+            return a.mostViragzikE == true;
+        });
+
         return SZURTLISTA;
+    }
+
+    getAdat(id){
+        return this.#lista.find((a)=>{
+            return a.id == id;
+        })
     }
 }

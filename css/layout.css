@@ -13,7 +13,12 @@ main {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 28px;
+    padding: 0 24px;
+}
+
+.virag h2 {
+    margin-bottom: 0;
 }
 
 nav ul {
@@ -22,22 +27,71 @@ nav ul {
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
+    gap: 10px;
 }
 
 nav ul li {
     text-align: center;
-    padding: 10px;
+    padding: 10px 22px;
+    margin: 0;
+}
+
+button {
+    text-align: center;
+    padding: 10px 22px;
+    margin: 0;
+}
+
+.virag p:last-child {
+    margin-bottom: 0;
+}
+
+.open {
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+section {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
 article {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 24px;
     margin: 20px 0;
 }
 
 article div {
-    padding: 10px;
+    width: 260px;
+    padding: 0 0 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
+article button {
+    width: 30%;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.modal {
+    border-radius: var(--radius);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    
+    width: 50vw;
+    height: 90vh;
+    overflow-x: hidden;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.5);
+}

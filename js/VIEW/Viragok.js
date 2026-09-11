@@ -10,8 +10,9 @@ export default class Viragok {
     }
 
     megjelenit(){
+        this.#szuloElem.innerHTML = "";
         this.#lista.forEach((elem,i)=>{
-            new Virag(this.#lista[i], this.#szuloElem);
+            new Virag(elem, this.#szuloElem);
         })
     }
 }
