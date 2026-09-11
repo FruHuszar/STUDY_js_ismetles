@@ -15,6 +15,6 @@ new ViragController();
  * a viragcontrollerbe feliratkozik a kosarba esemenyre
  * a modellben kell kosarlista ahova bekerul a kivalasztott adat
  * modellbe kell egy kosarba tagfuggveny
- * modellbe egy getkosar
+ *          modellbe egy getkosar
  * a controller lekeri a modelltol a kosar tartalmat és példányosítja a kosar divbe a kosár tartlmat (hasznald a viragok osztalt)
  */

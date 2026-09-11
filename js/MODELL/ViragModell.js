@@ -2,12 +2,21 @@ import { VIRAGLISTA } from "./adatok.js";
 
 export default class ViragModell {
     #lista=[];
+    #kosarlista=[];
     constructor(){
         this.#lista = VIRAGLISTA;
     }
 
     getLista(){
         return this.#lista;
+    }
+
+    getKosarlista(){
+        return this.#kosarlista;
+    }
+
+    kosarba(obj){
+        this.#kosarlista.push(obj);
     }
 
     rendezLista(){

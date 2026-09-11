@@ -1,5 +1,6 @@
 import ViragModell from "../MODELL/ViragModell.js";
 import Viragok from "../VIEW/Viragok.js";
+import Virag from "../VIEW/Virag.js";
 import ViragTeljes from "../VIEW/ViragTeljes.js";
 
 export default class ViragController {
@@ -10,6 +11,7 @@ export default class ViragController {
         this.#viragModell = new ViragModell;
         this.ARTICLEELEM = document.querySelectorAll(".tarolo")[0];
         this.MODALELEM = document.querySelector(".modal");
+        this.ARTICLEKOSARELEM = document.querySelectorAll("article")[1];
         this.#viragView = new Viragok(this.#viragModell.getLista(),this.ARTICLEELEM);
 
         this.szuresGomb = document.getElementById("szures");
@@ -35,6 +37,15 @@ export default class ViragController {
                 this.MODALELEM.innerHTML = "";
                 new ViragTeljes(adat, this.MODALELEM); 
                 this.MODALELEM.style.display = 'block'; 
+            }
+        });
+        
+        window.addEventListener("kosarba", (event) => {
+            const kivalasztottVirag = this.#viragModell.getAdat(event.detail);
+            
+            if (kivalasztottVirag) {
+                this.#viragModell.kosarba(kivalasztottVirag);
+                new Virag(kivalasztottVirag, this.ARTICLEKOSARELEM);
             }
         });
     }
